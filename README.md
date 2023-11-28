@@ -8,3 +8,23 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 <!-- lab 1 for 301 help from ChatGPT and inclass demo --># Gallery-of-Horns
+
+Number and name of feature: feature 1
+
+Estimate of time needed to complete: ~an hour
+
+Start time: 4:45
+
+Finish time: 6:05
+
+Actual time needed to complete: 1.5 hours
+
+Number and name of feature: feature 2
+
+Estimate of time needed to complete:
+
+Start time:
+
+Finish time:
+
+Actual time needed to complete:
