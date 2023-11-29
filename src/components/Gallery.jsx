@@ -1,5 +1,8 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import HornedBeast from "./HornedBeast"
+import App from "../App";
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'     
 
 const Gallery = (props) => {
   const { beastData } = props;
@@ -29,34 +32,38 @@ const Gallery = (props) => {
   return (
     <main>
       <h1>Gallery</h1>
-
-      <HornedBeast
-        title={beast1.title}
-        imageUrl={beast1.image_url}
-        description={beast1.description}
+      <h2>{props.message}</h2>
+      <
+          <HornedBeast
+          title={beast1.title}
+          imageUrl={beast1.image_url}
+          description={beast1.description}
+        />
+     
+        <HornedBeast
+          title={beast2.title}
+          imageUrl={beast2.image_url}
+          description={beast2.description}
       />
-
-      <HornedBeast
-        title={beast2.title}
-        imageUrl={beast2.image_url}
-        description={beast2.description}
-      />
-
+   
       <HornedBeast
         title={beast3.title}
         imageUrl={beast3.image_url}
         description={beast3.description}
       />
+     
       <HornedBeast
         title={beast4.title}
         imageUrl={beast4.image_url}
         description={beast4.description}
       />
+      
       <HornedBeast
         title={beast5.title}
         imageUrl={beast5.image_url}
         description={beast5.description}
       />
+     
       <HornedBeast
         title={beast6.title}
         imageUrl={beast6.image_url}
@@ -132,6 +139,31 @@ const Gallery = (props) => {
         imageUrl={beast20.image_url}
         description={beast20.description}
       />
+
+
+
+
+
+
+
+
+
+<Row>
+  <Col></Col>
+  <Col></Col>
+  <Col></Col>
+  <Col></Col>
+</Row>
+
+<Row><Col></Col>
+<Col></Col>
+<Col></Col>
+<Col></Col></Row>
+
+<Row></Row>
+<Row></Row>
+<Row></Row>
+
 
     </main>
   )

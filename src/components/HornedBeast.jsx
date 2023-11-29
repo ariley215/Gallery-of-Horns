@@ -4,7 +4,7 @@ import { FaHeart } from "react-icons/fa";
 
 
 const HornedBeast = ({title, imageUrl, description}) => {
-
+    
   const [favorites, setFavorites] = useState(0);
 
 

@@ -1,8 +1,11 @@
+/* eslint-disable react/prop-types */
+import Navbar from 'react-bootstrap/Navbar'
+
 const Footer = (props) => {
   return (
-  <footer>
+  <Navbar bg='dark' varient='dark'>
     <h2>Andrea Thiel{props.year}</h2>
-  </footer>
+  </Navbar>
   )
 }
 
