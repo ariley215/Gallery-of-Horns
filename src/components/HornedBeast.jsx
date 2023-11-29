@@ -5,17 +5,14 @@ import { FaHeart } from "react-icons/fa";
 
 const HornedBeast = ({title, imageUrl, description}) => {
 
-  const [like, setLike]  = useState(false);
+  const [favorites, setFavorites] = useState(0);
+
 
   function handleClick () {
-    if (like === 'Like') {
-      setLike();
-      } else  {
-        setLike(FaHeart);
+    setFavorites((prevFavorites) => prevFavorites + 1);
+      
     }
 
-    return 
-  }
 
 
   return (
@@ -23,7 +20,7 @@ const HornedBeast = ({title, imageUrl, description}) => {
     <h2>{title}</h2>
     <img src={imageUrl} alt={title}/>
     <p>{description}</p>
-    <h3>{like}</h3>
+    <span><FaHeart />{favorites}</span>
   </div>
   );
 };
