@@ -47,8 +47,8 @@ Number and name of feature: feature 1: Display a Modal
 
 Estimate of time needed to complete: ~2 hours
 
-Start time: _____
+Start time: 8:30pm
 
-Finish time: _____
+Finish time: its 11:50 and still not done. did take ~1.5 hour break
 
 Actual time needed to complete: _____
