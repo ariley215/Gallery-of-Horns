@@ -17,7 +17,7 @@ const Gallery = (props) => {
         <Row>
 
           {beastData.map((beast, index) => (
-            <Col  xs={12} md={6}>
+            <Col  xs={1} md={3}>
               <HornedBeast
                 key={index}
                 title={beast.title}
