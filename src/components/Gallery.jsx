@@ -6,8 +6,17 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container';
 
+
 const Gallery = (props) => {
   const { beastData } = props;
+  const { updateState } = props;
+
+  function handleClick (imageUrl) {
+// Perform modal-related logic here
+
+    updateState('newState', imageUrl);
+    
+  };
 
   return (
     <main>
@@ -23,6 +32,7 @@ const Gallery = (props) => {
                 title={beast.title}
                 imageUrl={beast.image_url}
                 description={beast.description}
+                onClick = {() => handleClick (beast.imageUrl)}
               />
             </Col>
 
