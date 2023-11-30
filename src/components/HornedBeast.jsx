@@ -19,7 +19,7 @@ const HornedBeast = ({title, imageUrl, description}) => {
   return (
   <div onClick={handleClick}>
     <h2>{title}</h2>
-    <img src={imageUrl} alt="A beast with horns" rounded fluid ></img>
+    <img src={imageUrl} alt="A beast with horns" width='100px.' height='100px'></img>
     <p>{description}</p>
     <span><FaHeart />{favorites}</span>
   </div>

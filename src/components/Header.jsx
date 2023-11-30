@@ -1,12 +1,15 @@
 /* eslint-disable react/prop-types */
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from 'react-bootstrap/Navbar'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
 
 const Header = (props) => {
   return (
-    <Navbar bg='dark' varient='dark'>
-      <h1>{props.title}</h1>
+    <Container>
+    <Navbar bg='dark' variant='dark'>
+      <Navbar.Brand>{props.title}</Navbar.Brand>
     </Navbar>
+    </Container>
   )
 }
 
