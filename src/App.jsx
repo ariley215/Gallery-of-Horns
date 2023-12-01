@@ -6,6 +6,7 @@ import beastData from "/src/beast-data.json"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';   
 import SelectedBeast from "./components/SelectedBeast";
+import HornsForm from "./components/HornsForm";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
       <Header title='Gallery of Horns' />
       <Gallery updateSelectedBeast={updateSelectedBeast} message= 'Choose Your Favorite' beastData={beastData} />
       <SelectedBeast show={showDescription} onClose={closeHandler} selectedBeast={selectedBeast} />
+      <HornsForm />
       <Footer name='Andrea Thiel' />
     </Container>
   );
