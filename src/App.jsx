@@ -7,22 +7,30 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';   
 import SelectedBeast from "./components/SelectedBeast";
 
+
 function App() {
  
-  const [state, setState] = useState('initialState');
+   // Added state to keep track of the selected beast and whether the modal is visible
+  const [selectedBeast, setSelectedBeast] = useState(null);
+  const [showDescription, setShowDescription] = useState(false);
+  
 
-  function updateState (newState) {
-    setState(newState);
-
+  function updateSelectedBeast(beast) {
+    // console.log('Before state update:', { showDescription, selectedBeast });
+    setSelectedBeast(beast);
+    setShowDescription(true);
   }
 
+  function closeHandler() {
+    setShowDescription(false);
+  }
  
  
   return (
     <Container>
       <Header title='Gallery of Horns' />
-      <Gallery message= 'Choose Your Favorite' beastData={beastData} updateState={updateState} />
-      <SelectedBeast />
+      <Gallery updateSelectedBeast={updateSelectedBeast} message= 'Choose Your Favorite' beastData={beastData} />
+      <SelectedBeast show={showDescription} onClose={closeHandler} selectedBeast={selectedBeast} />
       <Footer name='Andrea Thiel' />
     </Container>
   );

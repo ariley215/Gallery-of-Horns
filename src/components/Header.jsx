@@ -7,7 +7,7 @@ const Header = (props) => {
   return (
     <Container>
     <Navbar bg='dark' variant='dark'>
-      <Navbar.Brand>{props.title}</Navbar.Brand>
+      <Navbar.Brand><h1>{props.title}</h1></Navbar.Brand>
     </Navbar>
     </Container>
   )
