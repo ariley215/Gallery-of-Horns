@@ -6,17 +6,18 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container';
 
-
 const Gallery = (props) => {
   const { beastData } = props;
-  const { updateState } = props;
+  const { updateSelectedBeast } = props;
 
-  function handleClick (imageUrl) {
+  function handleClick (beast) {
+    console.log('handling click')
+    updateSelectedBeast(beast);
 // Perform modal-related logic here
 
-    updateState('newState', imageUrl);
     
-  };
+    
+  }
 
   return (
     <main>
@@ -26,13 +27,11 @@ const Gallery = (props) => {
         <Row>
 
           {beastData.map((beast, index) => (
-            <Col  xs={1} md={3}>
+            <Col xs={1} md={3} key={index} onClick = {() => handleClick (beast)}>
               <HornedBeast
-                key={index}
                 title={beast.title}
                 imageUrl={beast.image_url}
                 description={beast.description}
-                onClick = {() => handleClick (beast.imageUrl)}
               />
             </Col>
 
