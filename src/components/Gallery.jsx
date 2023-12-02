@@ -13,7 +13,7 @@ const Gallery = (props) => {
   function handleClick (beast) {
     console.log('handling click')
     updateSelectedBeast(beast);
-// Perform modal-related logic here
+
 
     
     

@@ -4,21 +4,32 @@ import Gallery from "./components/Gallery";
 import Container from 'react-bootstrap/Container';
 import beastData from "/src/beast-data.json"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState } from 'react';   
+import { useState } from 'react';
 import SelectedBeast from "./components/SelectedBeast";
 import HornsSelectorForm from "./components/HornsSelectorForm";
-import BeastList from "./components/BeastList";
-import HornsFilter from "./components/HornsFilter";
+// import BeastList from "./components/BeastList";
+// import HornsFilter from "./components/HornsFilter";
 
 
 function App() {
- 
-   // Added state to keep track of the selected beast and whether the modal is visible
+
+
+  const [beasts, setBeasts] = useState(beastData);  
   const [selectedBeast, setSelectedBeast] = useState(null);
   const [showDescription, setShowDescription] = useState(false);
-  
 
-  function updateSelectedBeast(beast) {
+  function handleSelect(choice) {
+    
+    if (choice === 'All') {
+      setBeasts(beastData);
+    } else {
+      const filteredBeasts = beastData.filter(beast => beast.horns === parseInt(choice));
+      setBeasts(filteredBeasts);
+      console.log('handling selection')
+    }
+
+  }
+    function updateSelectedBeast(beast) {
     // console.log('Before state update:', { showDescription, selectedBeast });
     setSelectedBeast(beast);
     setShowDescription(true);
@@ -27,17 +38,15 @@ function App() {
   function closeHandler() {
     setShowDescription(false);
   }
- 
- 
+
+
   return (
     <Container>
       <Header title='Gallery of Horns' />
-      <HornsSelectorForm />
-      <Gallery updateSelectedBeast={updateSelectedBeast} message= 'Choose Your Favorite' beastData={beastData} />
+      {beasts.length > 0 &&<HornsSelectorForm onSelect={handleSelect} />}
+      <Gallery updateSelectedBeast={updateSelectedBeast} message='Choose Your Favorite' beastData={beastData} />
       <SelectedBeast show={showDescription} onClose={closeHandler} selectedBeast={selectedBeast} />
-      
-      <BeastList />
-      <HornsFilter />
+      {/* <BeastList beasts={beasts} />      */}
       <Footer name='Andrea Thiel' />
     </Container>
   );
