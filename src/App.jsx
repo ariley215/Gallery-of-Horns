@@ -6,7 +6,9 @@ import beastData from "/src/beast-data.json"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';   
 import SelectedBeast from "./components/SelectedBeast";
-import HornsForm from "./components/HornsForm";
+import HornsSelectorForm from "./components/HornsSelectorForm";
+import BeastList from "./components/BeastList";
+import HornsFilter from "./components/HornsFilter";
 
 
 function App() {
@@ -30,9 +32,12 @@ function App() {
   return (
     <Container>
       <Header title='Gallery of Horns' />
+      <HornsSelectorForm />
       <Gallery updateSelectedBeast={updateSelectedBeast} message= 'Choose Your Favorite' beastData={beastData} />
       <SelectedBeast show={showDescription} onClose={closeHandler} selectedBeast={selectedBeast} />
-      <HornsForm />
+      
+      <BeastList />
+      <HornsFilter />
       <Footer name='Andrea Thiel' />
     </Container>
   );
