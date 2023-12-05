@@ -4,7 +4,7 @@ import { FaHeart } from "react-icons/fa";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-const HornedBeast = ({title, imageUrl}) => {
+const HornedBeast = ({ title, imageUrl,}) => {
     
   const [favorites, setFavorites] = useState(0);
 

@@ -9,11 +9,12 @@ import Container from 'react-bootstrap/Container';
 const Gallery = (props) => {
   const { beastData } = props;
   const { updateSelectedBeast } = props;
-
+  // const { filteredBeasts } = props;
+  console.log(beastData)
   function handleClick (beast) {
     console.log('handling click')
     updateSelectedBeast(beast);
-// Perform modal-related logic here
+
 
     
     
