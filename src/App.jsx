@@ -14,22 +14,24 @@ import HornsSelectorForm from "./components/HornsSelectorForm";
 function App() {
 
 
-  const [beasts, setBeasts] = useState(beastData);  
+  const [beasts, setBeasts] = useState(beastData);
   const [selectedBeast, setSelectedBeast] = useState(null);
   const [showDescription, setShowDescription] = useState(false);
-
+  
   function handleSelect(choice) {
-    
+
     if (choice === 'All') {
       setBeasts(beastData);
     } else {
       const filteredBeasts = beastData.filter(beast => beast.horns === parseInt(choice));
       setBeasts(filteredBeasts);
       console.log('handling selection')
+      console.log('choice', choice)
+      console.log(filteredBeasts)
     }
 
   }
-    function updateSelectedBeast(beast) {
+  function updateSelectedBeast(beast) {
     // console.log('Before state update:', { showDescription, selectedBeast });
     setSelectedBeast(beast);
     setShowDescription(true);
@@ -43,8 +45,13 @@ function App() {
   return (
     <Container>
       <Header title='Gallery of Horns' />
-      {beasts.length > 0 &&<HornsSelectorForm onSelect={handleSelect} />}
-      <Gallery updateSelectedBeast={updateSelectedBeast} message='Choose Your Favorite' beastData={beastData} />
+      {beasts.length > 0 && <HornsSelectorForm onSelect={handleSelect} />}
+      <Gallery
+        updateSelectedBeast={updateSelectedBeast}
+        message='Choose Your Favorite'
+        beastData={beasts}
+        // filteredBeasts={filteredBeasts} 
+        />
       <SelectedBeast show={showDescription} onClose={closeHandler} selectedBeast={selectedBeast} />
       {/* <BeastList beasts={beasts} />      */}
       <Footer name='Andrea Thiel' />
